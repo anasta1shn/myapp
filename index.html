@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Моя страница</title>
+  <style>
+    body {
+      background-color: #ecf0f1;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    h2 {
+      font-size: 24px;
+      color: gray;
+    }
+    #colorButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Заголовок страницы</h1>
+  <h2>Это подзаголовок</h2>
+
+  <button id="colorButton" onclick="changeColor()">Изменить цвет</button>
+
+  <script>
+    const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f1c40f"];
+    function changeColor() {
+      const button = document.getElementById("colorButton");
+      const newColor = colors[Math.floor(Math.random() * colors.length)];
+      button.style.backgroundColor = newColor;
+      document.body.style.backgroundColor = newColor;
+      button.textContent = "Цвет изменён!";
+    }
+  </script>
+
+</body>
+</html>
